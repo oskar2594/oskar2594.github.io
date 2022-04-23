@@ -10,7 +10,7 @@ $(document).ready(() => {
     channelWorker.init($('.channels'));
 
     $('.player').click(() => {
-        if(gestureController.finished && gestureController.current == 2) gestureController.back();
+        if (gestureController.finished && gestureController.current == 2) gestureController.back();
     })
 });
 
@@ -58,8 +58,12 @@ let favoriteManager = {
                     clickHandler.on('singletap doubletap', function (e) {
                         switch (e.type) {
                             case "singletap":
-                                gestureController.hide();
-                                playerManager.changeSource(f);
+                                if (d.type == "link") {
+                                    window.location.href = d.destination;
+                                } else {
+                                    gestureController.hide();
+                                    playerManager.changeSource(f);
+                                }
                                 break;
                             case "doubletap":
                                 favoriteManager.remove(f);
@@ -68,15 +72,19 @@ let favoriteManager = {
                     });
                 } else {
                     element.click(() => {
-                        gestureController.hide();
-                        playerManager.changeSource(f);
+                        if (d.type == "link") {
+                            window.location.href = d.destination;
+                        } else {
+                            gestureController.hide();
+                            playerManager.changeSource(f);
+                        }
                     });
                 }
                 $(this).append(element);
             });
         });
-        $(`.channels ul.all .channel.fav`).each(function() {
-            if(!fav.includes($(this).attr('data-cid'))) {
+        $(`.channels ul.all .channel.fav`).each(function () {
+            if (!fav.includes($(this).attr('data-cid'))) {
                 $(this).removeClass('fav')
             }
         });
@@ -173,8 +181,12 @@ let channelWorker = {
             clickHandler.on('singletap doubletap', function (e) {
                 switch (e.type) {
                     case "singletap":
-                        gestureController.hide();
-                        playerManager.changeSource(i);
+                        if (c.type == "link") {
+                            window.location.href = c.destination;
+                        } else {
+                            gestureController.hide();
+                            playerManager.changeSource(i);
+                        }
                         break;
                     case "doubletap":
                         favoriteManager.add(i);
@@ -187,10 +199,14 @@ let channelWorker = {
 }
 
 
-function createChannelHtml(name, source, logo, id) {
-    return $(`<li class="channel" data-cid="${id}" data-source="${source}" data-name="${name}"><img class="icon"src="${logo}"alt="${name}"><div class="description"><p>${name}</p></div></li>`);
-}
+function createChannelHtml(name, source, logo, id, type) {
+    if (type == "link") {
+        return $(`<li class="channel" data-cid="${id}" data-link="${source}" data-name="${name}"><img class="icon"src="${logo}"alt="${name}"><div class="description"><p>${name}</p></div></li>`);
 
+    } else {
+        return $(`<li class="channel" data-cid="${id}" data-source="${source}" data-name="${name}"><img class="icon"src="${logo}"alt="${name}"><div class="description"><p>${name}</p></div></li>`);
+    }
+}
 function getChannelDetails(id) {
     return window.channelData?.[id];
 }
