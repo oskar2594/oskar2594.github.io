@@ -136,5 +136,11 @@ window.channelData = [
         "name": "Netflix",
         "destination": "https://www.netflix.com/de/",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Netflix_logo.svg/640px-Netflix_logo.svg.png"
+    },
+    {   
+        "type": "link",
+        "name": "ARTE Mediathek",
+        "destination": "https://www.arte.tv/de/",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Arte-Logo.svg/640px-Arte-Logo.svg.png"
     }
 ]
