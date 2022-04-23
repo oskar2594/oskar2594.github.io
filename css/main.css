@@ -1,0 +1,42 @@
+:root {
+    --color-background: #ffffff;
+    --color-box-background: #ebebeb;
+    --color-border-color: #e4e4e4;
+    --color-primary: #0f65e3;
+    --color-text: #2a2e2e;
+    --color-text-2: #787877;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Gotham';
+    color: var(--color-text);
+    background-color: rgb(82, 82, 82);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+.ui {
+    transition: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 400ms left ease-out;
+}
+
+.ui.hide {
+    left: -100%;
+}

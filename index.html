@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cc598ded58.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/channels.css">
+    <link rel="stylesheet" href="css/fastswitch.css">
+    <link rel="stylesheet" href="css/player.css">
+    <script src="./assets/channels.js"></script>
+    <script src="./assets/js/jQuery.js"></script>
+    <script src="./assets/js/hls.js"></script>
+    <script src="./assets/js/hammer.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/switcher.js"></script>
+    <script src="./js/player.js"></script>
+    <title>TeslaTV</title>
+</head>
+
+<body>
+    <div class="app gest">
+        <div class="ui">
+            <div class="channels">
+                <div class="top">
+                    <div class="close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="title">
+                        <i class="fa-solid fa-tv"></i> Senderauswahl
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="favorites">
+                        <p class="title">Favoriten</p>
+                        <ul class="favorites change">
+                            <li class="channel" data-cid="" data-source="" data-name="">
+                                <img class="icon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Das_Erste_2014.svg/1200px-Das_Erste_2014.svg.png"
+                                    alt="Das Erste">
+                                <div class="description">
+                                    <p>Das Erste</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="all">
+                        <p class="title">Alle Sender</p>
+                        <ul class="all">
+                            <li class="channel fav" data-cid="" data-source="" data-name="">
+                                <img class="icon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Das_Erste_2014.svg/1200px-Das_Erste_2014.svg.png"
+                                    alt="Das Erste">
+                                <div class="description">
+                                    <p>Das Erste</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fastswitch hide">
+            <ul class="favorites">
+                <li class="channel" data-cid="" data-source="" data-name="">
+                    <img class="icon"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Das_Erste_2014.svg/1200px-Das_Erste_2014.svg.png"
+                        alt="Das Erste">
+                </li>
+
+            </ul>
+        </div>
+        <div class="player">
+            <div class="lds-ripple loader"><div></div><div></div></div>
+            <div class="content">
+                <div class="controls">
+                    <div class="playpause pause">
+                        <i class="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-pause"></i>
+                    </div>
+                </div>
+                <video data-source="" id="player" playsinline>
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
